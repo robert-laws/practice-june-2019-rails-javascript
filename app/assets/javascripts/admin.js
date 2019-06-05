@@ -16,8 +16,4 @@
 //= require turbolinks
 //= require jquery
 //= require materialize
-// require_tree .
-
-$(document).ready(function () {
-  $('.sidenav').sidenav();
-});
+//= require greeting

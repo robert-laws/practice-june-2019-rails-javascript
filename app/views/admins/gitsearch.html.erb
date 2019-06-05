@@ -1,0 +1,39 @@
+<div class="row">
+  <div class="col s12">  
+    <h4>Git Search</h4>
+  </div>
+</div>
+
+<div class="row">
+  <div class="col s12">  
+    <%= form_tag "/github" do %>  
+      <div class="row">
+        <div class="input-field col s12">
+          <%= text_field_tag :query %>
+          <%= label_tag :query %>
+        </div>
+      </div>
+      <div class="row">
+        <%= submit_tag "Search!", class: "btn waves-effect waves-light" %>
+      </div>
+    <% end %>
+  </div>
+</div>
+
+<div class="row">
+  <div class="col s12">
+    <% if @error %>
+      <p><%= @error %></p>
+    <% elsif @repos %>
+      <ul>
+        <% @repos.each do |repo| %>
+          <li>
+            <strong>Name:</strong> <%= repo["name"] %><br>
+            <strong>Description:</strong> <%= repo["description"] %>
+            <hr>
+          </li>
+        <% end %>
+      </ul>
+    <% end %>
+  </div>
+</div>
